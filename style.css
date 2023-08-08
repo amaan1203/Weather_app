@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+/* now the global variables of color */
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+}
+
+.current-tab {
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+.grant-access-container{
+    display:none;
+}
+
+.active{
+    display:flex;
+}
+
+.loading-container{
+    display:none;
+}
+
+.loading-container.active{
+    display:flex;
+}
+
+.weatherInfoContainer{
+    display:none;
+}
+.weatherInfoContainer.active{
+    display:flex;
+}
+.parameter{
+    background-color:rgba(219, 226, 239, 0.5);
+}
+
+.search-form{
+    display:none;
+}
+
+.search-form.active{
+    display:flex;
+}
+
+.search-form input{
+    
+    color:var(--colorLight1);
+    height:40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+.search-form .btn{
+    background-color:rgba(219, 226, 239, 0.5);
+}

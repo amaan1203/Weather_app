@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- this is the line of code to add google fonts in html. also family me us font ka naam likhna padega aur beech me space ki jagah add the + sign -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="wrapper w-[100vw] h-[100vh] box-border overflow-auto m-0 p-0  bg-[var(--colorLight2)] text-white">
+     
+        <h1 class="text-center uppercase pt-[20px] text-white font-bold text-4xl">Weather App</h1>
+        <div class="tab-container flex justify-between max-w-[550px] mx-auto my-auto mt-[4rem] w-[90%] cursor-pointer font-[0.875rem] text-white ">
+            <p class="tab  p-2" data-userWeather>Your Weather</p>
+            <p class="tab  p-2" data-searchWeather>Search Weather</p>
+        </div>
+        <!-- grant location container -->
+        <div class="grant-access-container flex flex-col  items-center justify-center ">
+            <img  class=" justify-center mb-[2rem]" src="./weatherAppProject/weatherAppProject/assets/location.png" width="120" height="120" loading="lazy">
+            <p class="text-center font-[600] text-3xl items-center ">Grant Location Access</p>
+            <p class="text-center font-[0.85rem] mt-[0.75rem] mb-[1.75rem] tracking-[0.75px] ">Allow Access to get weather Information</p>
+            <button class="btn mx-[550px] w-auto font-[0.85rem] uppercase rounded-[5px] bg-[var(--colorDark2)] px-[10px] py-[10px] cursor-pointer mb-[10px]" data-grantAccess>Grant Access</button>
+        </div>
+
+
+        <!-- search your city form -->
+        <form data-searchForm class="search-form text-black flex items-baseline justify-center gap-x-2  ">
+            <input type="text" placeholder="search your city.." class="text-black mb-[3rem] w-[50%] translate-y-[25px] " data-searchInput>
+            <button  class="btn rounded-full flex justify-center items-center w-[40px] h-[40px] translate-y-[35px]" type="submit"><img src="./weatherAppProject/weatherAppProject/assets/search.png" width="30px" height="30px"
+                     searchBtn></button>
+        </form>
+
+        <!--- loading screen container -->
+        <div class="loading-container flex flex-col items-center justify-center">
+            <img src="./weatherAppProject/weatherAppProject/assets/loading.gif" width="150" height="150">
+            <p class="uppercase text-3xl ">Loading</p>
+        </div>
+        
+        <!-- weather info container -->
+        <div class="weatherInfoContainer flex flex-col items-center">
+            <!--city name and Flag-->
+            <div class="name flex items-center mb-[1rem] gap-y-[0.5rem] gap-x-2">
+                <p class="text-3xl" data-cityName></p>
+                <img class="w-[45px] h-[45px]" data-countryIcon>
+            </div>
+            <!-- weather description-->
+            <p  class="text-2xl" data-weatherDesc></p>
+            <!--weather Icon-->
+            <img  class="w-[75px] h-[75px]" data-weatherIcon>
+            <!--temperature-->
+            <p  class="text-4xl bold" data-temp></p>
+            <!--3 cards - parameters-->
+            <div class="parameter-container flex w-[90%] gap-x-[10px] gap-y-[20px] items-center justify-center mt-[2rem] mb-[2rem]">
+                <!--card 1-->
+                <div class="parameter w-[30%] max-w-[200px] rounded-[5px] p-[1rem] gap-x-[5px] flex flex-col items-center justify-center text-xl">
+                    <img class="w-[80px] h-[80px]" src="./weatherAppProject/weatherAppProject/assets/wind.png">
+                    <p>windspeed</p>
+                    <p data-windspeed></p>
+                </div>
+                <!--card 2-->
+                <div class="parameter w-[30%] max-w-[200px] rounded-[5px] p-[1rem] gap-x-[5px] flex flex-col items-center justify-center text-xl">
+                    <img  class="w-[80px] h-[80px]" src="./weatherAppProject/weatherAppProject/assets/humidity.png">
+                    <p>humidity</p>
+                    <p data-humidity></p>
+                </div>
+                <!--card 3-->
+                <div class="parameter w-[30%] max-w-[200px] rounded-[5px] p-[1rem] gap-x-[5px] flex flex-col items-center justify-center text-xl">
+                    <img  class="w-[80px] h-[80px]" src="./weatherAppProject/weatherAppProject/assets/cloud.png">
+                    <p>Clouds</p>
+                    <p data-cloudiness></p>
+                </div>
+            </div>
+        </div>
+   
+    </div> 
+    <script src="script.js"></script>
+</body>
+
+</html>
